@@ -1,0 +1,246 @@
+html
+{
+    background: url("../images/bokeh-bg.png") repeat center center fixed;
+    padding-top: 20px;
+}
+
+.col-header
+{
+    text-align: center;
+    text-shadow: 2px 2px white;
+}
+
+.col-header h1
+{
+    letter-spacing: 15px;
+}
+
+.col-header h2
+{
+    letter-spacing: 15px;
+}
+
+#submitName
+{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.rps-form
+{
+    text-align: center;
+}
+
+.rps-form input
+{
+    height: 45px;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 15pt;
+    margin-top: 10px;
+    background-color: #F0F0F0;
+}
+
+#you-are-message-player
+{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#you-are-message-opponent
+{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.waiting-player
+{
+    text-align: center;
+    font-size: 25pt;
+    text-transform: capitalize;
+}
+
+.waiting-opponent
+{
+    text-align: center;
+    font-size: 25pt;
+    text-transform: capitalize;
+}
+
+.row-rps-arena
+{
+    margin-top: 20px;
+}
+
+.info-player
+{
+    text-align: center;
+    font-size: 20pt;
+    margin-top: 70px;
+}
+
+.info-player::first-letter
+{
+    text-transform: capitalize;
+}
+
+.info-opponent
+{
+    text-align: center;
+    font-size: 18pt;
+    margin-top: 70px;
+}
+
+.info-opponent::first-letter
+{
+    text-transform: capitalize;
+}
+
+.rps-opponent
+{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18pt;
+    margin-top: 70px;
+}
+
+.player-scores
+{
+    font-size: 15pt;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.opponent-scores
+{
+    font-size: 15pt;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.win-lose-message
+{
+    text-align: center;
+}
+
+.player-choice
+{
+    text-transform: capitalize;
+}
+
+.opponent-choice
+{
+    text-transform: capitalize;
+}
+
+/* COL PLAYER AREA */
+.col-player-area
+{
+    border:2px solid #768692;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #F0F0F0;
+    padding-top: 20px;
+}
+
+.col-opponent-area
+{
+    border:2px solid #768692;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #F0F0F0;
+    padding-top: 20px;
+}
+
+/* CHAT */
+.row-chat-area
+{
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.col-chat
+{
+    border:2px solid #768692;
+    border-radius: 5px;
+    height: 300px;
+    padding-top: 5px;
+    overflow: scroll;
+    background-color: #F0F0F0;
+}
+
+.chat-header
+{
+    text-align: center;
+    margin-bottom: -20px;
+    font-size: 20pt;
+}
+
+.row-chat-container
+{
+    margin-top: 15px;
+}
+
+.chat-text
+{
+    margin-top: -15px;
+}
+
+.chat-player
+{
+    font-weight: bold;
+    color: #5bd6ff;
+    text-transform: capitalize;
+}
+
+.chat-opponent
+{
+    font-weight: bold;
+    color:indianred;
+    text-transform: capitalize;
+}
+
+.chat-input-text
+{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 15pt;
+    text-indent: 10px;
+    border-radius: 5px;
+}
+
+.btnSubmit
+{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* LOADING IMG */
+.loading-img-player
+{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.loading-img-player img
+{
+    height: 125px;
+}
+
+.loading-img-opponent
+{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.loading-img-opponent img
+{
+    height: 125px;
+}

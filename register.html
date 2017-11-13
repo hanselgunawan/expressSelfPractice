@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+</head>
+<body class="container-fluid">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="jumbotron">
+            <h1 class="text-center">REGISTER TO HANSELAB!</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <ul class="list-group">
+            <a href="/home"><li class="list-group-item">Home</li></a>
+            <a href="/register"><li class="list-group-item">Register</li></a>
+            <a href="/list"><li class="list-group-item">List</li></a>
+        </ul>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+
+<div class="row" style="margin-top: 50px">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <form class="form-group">
+            <label>Name</label>
+            <input type="text" class="input-group" id="userName">
+            <label style="margin-top: 10px">E-Mail</label>
+            <input type="email" class="input-group" id="userEmail">
+            <label style="margin-top: 10px">Phone Number</label>
+            <input type="email" class="input-group" id="userPhone">
+            <button id="submitBtn" class="btn-success" style="margin-top: 10px">Submit</button>
+        </form>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+</body>
+<script>
+    $("#submitBtn").on("click", () => {
+        let newUser = {
+            name: $("#userName").val().trim(),
+            email: $("#userEmail").val().trim(),
+            phone: $("#userPhone").val().trim()
+        };
+        $.post("/register_user", newUser).done((data) =>{
+            alert("Thanks for reserving, "+data.name+"!");
+            $("#userName").empty();
+            $("#userEmail").empty();
+            $("#userPhone").empty();
+        });
+    });
+</script>
+</html>
