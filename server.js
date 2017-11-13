@@ -6,9 +6,11 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'assets')));
 
 let userArr = [];
 
@@ -33,8 +35,27 @@ app.get("/api", (req, res) => {
 });
 
 app.post("/register_user", (req, res) => {
+    let flag = false;
     let userData = req.body;//body-parser works here!
-    console.log(userData);
-    userArr.push(userData);//push data from user input to an array
-    res.json(userArr);//POST data to the API
+    for(let i = 0;i < userArr.length; i++)
+    {
+        if(userArr[i].name === userData.name)
+        {
+            flag = true;
+            break;
+        }
+    }
+    if(flag === false)
+    {
+        userArr.push(userData);//push data from user input to an array
+        res.json(userArr);//POST data to the API
+    }
+    else
+    {
+        res.send("found");
+    }
+});
+
+app.listen(PORT, () => {
+    console.log("App listening on PORT " + PORT);
 });

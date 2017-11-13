@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>List of People</title>
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
+    <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <script src="/js/jquery.js"></script>
 </head>
 <body class="container-fluid">
 <div class="row">
@@ -62,7 +62,7 @@
     $.get("/api", (data) => {
          for(let i=0;i<data.length;i++)
          {
-             let tr_td = "<tr><td>"+ data.name +"</td><td>"+ data.email +"</td><td>"+ data.phone +"</td></tr>";
+             let tr_td = "<tr><td>"+ data[i].name +"</td><td>"+ data[i].email +"</td><td>"+ data[i].phone +"</td></tr>";
              $("#myTableBody").append(tr_td);
          }
     });

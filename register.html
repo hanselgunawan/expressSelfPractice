@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
+    <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <script src="/js/jquery.js"></script>
 </head>
 <body class="container-fluid">
 <div class="row">
@@ -35,7 +35,7 @@
             <label style="margin-top: 10px">E-Mail</label>
             <input type="email" class="input-group" id="userEmail">
             <label style="margin-top: 10px">Phone Number</label>
-            <input type="email" class="input-group" id="userPhone">
+            <input type="text" class="input-group" id="userPhone">
             <button id="submitBtn" class="btn-success" style="margin-top: 10px">Submit</button>
         </form>
     </div>
@@ -43,17 +43,26 @@
 </div>
 </body>
 <script>
-    $("#submitBtn").on("click", () => {
+    $("#submitBtn").on("click", (event) => {
         let newUser = {
             name: $("#userName").val().trim(),
             email: $("#userEmail").val().trim(),
             phone: $("#userPhone").val().trim()
         };
         $.post("/register_user", newUser).done((data) =>{
-            alert("Thanks for reserving, "+data.name+"!");
-            $("#userName").empty();
-            $("#userEmail").empty();
-            $("#userPhone").empty();
+            if(data === "found")
+            {
+                alert(newUser.name + " already exist! Try other name...");
+                event.preventDefault();
+                return false;
+            }
+            else
+            {
+                alert("Thanks for reserving, "+newUser.name+"!");
+                $("#userName").empty();
+                $("#userEmail").empty();
+                $("#userPhone").empty();
+            }
         });
     });
 </script>
